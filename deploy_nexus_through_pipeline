@@ -17,9 +17,9 @@ pipeline {
         // This can be http or https
         NEXUS_PROTOCOL = "http"
         // Where your Nexus is running
-        NEXUS_URL = "34.68.216.83:8081/"
+        NEXUS_URL = "NEXUS_URL:8081/"
         // Repository where we will upload the artifact
-        NEXUS_REPOSITORY = "example-repository"
+        NEXUS_REPOSITORY = "NUXUS_REPOSITORY_NAME"
         // Jenkins credential id to authenticate to Nexus OSS
         NEXUS_CREDENTIAL_ID = "nexus-credentials"
     }
@@ -27,7 +27,7 @@ pipeline {
     stages {
         stage("clone code") {
             steps {
-                git branch: 'main', credentialsId: 'da9f9063-c80a-49f5-aef8-dfeb31e2596a', url: 'https://github.com/aravind-admin/webapplication.git'
+                git branch: 'main', credentialsId: 'da9f9063-c80a-49f5-aef8-dfeb31e2596a', url: 'GITHUB_REPOSITORY_URL'
             }
         }
 
